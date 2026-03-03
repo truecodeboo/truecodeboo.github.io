@@ -1,0 +1,80 @@
+# ==========================================
+# TrueCode.Boo | 出口簿 - 核心配置
+# ==========================================
+baseURL = 'https://truecodeboo.github.io/'
+languageCode = 'zh-tw'
+title = 'TrueCode.Boo | 出口簿'
+theme = 'PaperMod'
+
+# 確保輸出內容包含搜尋索引 (對未來 SEO 有幫助)
+[outputs]
+    home = ["HTML", "RSS", "JSON"]
+
+# ==========================================
+# 1. GitHub Actions 與 效能最佳化 (Step 2)
+# ==========================================
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
+  [caches.assets]
+    dir = ':cacheDir/assets'
+
+# 移除不必要的 Emoji 轉換，加快生成速度
+enableEmoji = true
+
+# ==========================================
+# 2. PaperMod 主題專屬設定 (極客/紳士風格)
+# ==========================================
+[params]
+    env = "production"
+    title = "TrueCode.Boo"
+    description = "一個關於自主權的實踐紀錄：從開源代碼、機械機芯到朝聖之路。"
+    keywords = ["Mount & Blade", "Camino", "Mechanical Watch", "Linux", "Affiliate"]
+    author = "truecodeboo"
+    
+    # 顯示「閱讀時間」與「最後更新」，展現數據精確性
+    ShowReadingTime = true
+    ShowLastMod = true
+    ShowCodeCopyButtons = true # 方便讀者複製你的 Mod 代碼或 Linux 指令
+    
+    # 首頁大標題配置 (Home Info Mode)
+    [params.homeInfoParams]
+        Title = "這裡是出口。"
+        Content = "代碼是真實的，齒輪是誠實的，腳下的路是自主的。"
+
+    # 導覽列設定
+    [[params.menu.main]]
+        identifier = "posts"
+        name = "出口紀錄 (Posts)"
+        url = "/posts"
+        weight = 10
+    [[params.menu.main]]
+        identifier = "tags"
+        name = "標籤 (Tags)"
+        url = "/tags"
+        weight = 20
+    [[params.menu.main]]
+        identifier = "about"
+        name = "關於 (About)"
+        url = "/about"
+        weight = 30
+
+    # 社群/外部連結 (你的數位足跡)
+    [[params.socialIcons]]
+        name = "github"
+        url = "https://github.com/truecodeboo"
+    [[params.socialIcons]]
+        name = "rss"
+        url = "/index.xml"
+
+# ==========================================
+# 3. 內容與網址規則 (自主權管理)
+# ==========================================
+[permalinks]
+    posts = "/posts/:title/" # 讓網址保持乾淨
+
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = true # 允許在 Markdown 中直接使用 HTML (為了埋 AffiliateOne 的廣告代碼)
+  [markup.highlight]
+    style = "monokai" # 程式碼高亮風格，極客最愛
