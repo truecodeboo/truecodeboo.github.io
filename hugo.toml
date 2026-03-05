@@ -72,8 +72,8 @@ enableEmoji = true
 # 3. 內容與網址規則 (自主權管理)
 # ==========================================
 [permalinks]
-    # posts = "/posts/:title/" # 讓網址保持乾淨
-    posts = "/posts/:slug/" # 這是對應你 freeradio.md 裡的 slug
+    posts = "/posts/:title/" # 讓網址保持乾淨
+    # posts = "/posts/:slug/" # 這是對應你 freeradio.md 裡的 slug
 
 [markup]
   
