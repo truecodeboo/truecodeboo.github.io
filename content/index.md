@@ -6,12 +6,14 @@ description: "一個關於自主權的實踐紀錄：從開源代碼、機械機
 showToc: false
 ---
 
-# 這裡是出口。
+# 這裡是 AI 生成的 出口簿首頁。
 
 在這個被演算法、訂閱制與大數據圍困的時代，我們重新奪回生存的控制權。
 
 ### 01. 數位自主 (Digital Autonomy)
-不隨波逐流使用封閉系統。這裡討論 **Free Software**、**Linux 配置**與 **Mount & Blade** 的底層邏輯改造。
+不隨波逐流使用封閉系統。這裡討論 **Free Software**、**Linux 配置**與 **無線電通訊**、**Mount & Blade** 底層邏輯改造。
+
+> *[最新文章]*：**[無線電自由的重要](/posts/freeradio)**
 > *Status: [System Initializing...]*
 
 ### 02. 物理秩序 (Physical Order)
