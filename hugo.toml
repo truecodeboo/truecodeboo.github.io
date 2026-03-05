@@ -6,6 +6,9 @@ languageCode = 'zh-tw'
 title = 'TrueCode.Boo | 出口簿'
 theme = 'PaperMod'
 
+# 確保 Hugo 能正確找到內容 (解決 Artifact 沒 posts 的問題)
+contentDir = 'content'
+publishDir = 'public'
 # 確保輸出內容包含搜尋索引 (對未來 SEO 有幫助)
 [outputs]
     home = ["HTML", "RSS", "JSON"]
@@ -33,6 +36,13 @@ enableEmoji = true
     author = "truecodeboo"
     defaultTheme = "auto"
 
+# 外觀設定
+    defaultTheme = "auto"
+    displayFullContent = false
+
+    showShareButtons = true
+    showPostNavLinks = true
+    
     # 顯示「閱讀時間」與「最後更新」，展現數據精確性
     ShowReadingTime = true
     ShowLastMod = true
@@ -43,6 +53,18 @@ enableEmoji = true
         Title = "這裡是出口。"
         Content = "代碼是真實的，齒輪是誠實的，腳下的路是自主的。"
 
+    # 頂部導覽選單
+    [[menu.main]]
+        identifier = "posts"
+        name = "所有文章"
+        url = "/posts/"
+        weight = 10
+        
+    [[menu.main]]
+        identifier = "tags"
+        name = "標籤"
+        url = "/tags/"
+        weight = 20     
     # 導覽列設定
     [[params.menu.main]]
         identifier = "posts"
@@ -72,8 +94,8 @@ enableEmoji = true
 # 3. 內容與網址規則 (自主權管理)
 # ==========================================
 [permalinks]
-    posts = "/posts/:title/" # 讓網址保持乾淨
-    # posts = "/posts/:slug/" # 這是對應你 freeradio.md 裡的 slug
+    # posts = "/posts/:title/" # 讓網址保持乾淨
+    posts = "/posts/:slug/" # 這是對應你 freeradio.md 裡的 slug
 
 [markup]
   
@@ -81,3 +103,9 @@ enableEmoji = true
     unsafe = true  # 確保 YouTube 內嵌能跑  # 允許在 Markdown 中直接使用 HTML (為了埋 AffiliateOne 的廣告代碼)
   [markup.highlight]
     style = "monokai" # 程式碼高亮風格，極客最愛
+    
+# ==========================================
+# 隱私與安全
+# ==========================================
+[privacy.youtube]
+    privacyEnhanced = true # 使用 youtube-nocookie.com
