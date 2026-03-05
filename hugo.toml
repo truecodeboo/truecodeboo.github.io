@@ -7,6 +7,7 @@ title = 'TrueCode.Boo | 出口簿'
 theme = 'PaperMod'
 
 # 確保 Hugo 能正確找到內容 (解決 Artifact 沒 posts 的問題)
+workingDir = '.'
 contentDir = 'content'
 publishDir = 'public'
 # 確保輸出內容包含搜尋索引 (對未來 SEO 有幫助)
@@ -37,7 +38,6 @@ enableEmoji = true
     defaultTheme = "auto"
 
 # 外觀設定
-    defaultTheme = "auto"
     displayFullContent = false
 
     showShareButtons = true
