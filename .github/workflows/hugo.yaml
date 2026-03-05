@@ -3,11 +3,16 @@ name: Deploy Hugo site to Pages
 on:
   push:
     branches: ["main"]
+  workflow_dispatch: # 允許手動點擊執行
 
 permissions:
   contents: read
   pages: write
   id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true # 這是解決 "Artifact count is 2" 的關鍵，會自動取消舊的施工
 
 jobs:
   build:
@@ -16,14 +21,20 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          submodules: recursive # 確保主題 (PaperMod) 有被抓到
+          submodules: recursive
+          fetch-depth: 0
+
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
           hugo-version: 'latest'
-          extended: true # 處理 PaperMod 的 SCSS 需要 extended 版本
+          extended: true
+
       - name: Build
-        run: hugo --minify
+        run: |
+          hugo --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
+        id: build
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

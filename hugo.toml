@@ -31,7 +31,8 @@ enableEmoji = true
     description = "一個關於自主權的實踐紀錄：從開源代碼、機械機芯到朝聖之路。"
     keywords = ["Mount & Blade", "Camino", "Mechanical Watch", "Linux", "Affiliate"]
     author = "truecodeboo"
-    
+    defaultTheme = "auto"
+
     # 顯示「閱讀時間」與「最後更新」，展現數據精確性
     ShowReadingTime = true
     ShowLastMod = true
@@ -71,10 +72,12 @@ enableEmoji = true
 # 3. 內容與網址規則 (自主權管理)
 # ==========================================
 [permalinks]
-    posts = "/posts/:title/" # 讓網址保持乾淨
+    # posts = "/posts/:title/" # 讓網址保持乾淨
+    posts = "/posts/:slug/" # 這是對應你 freeradio.md 裡的 slug
 
 [markup]
+  
   [markup.goldmark.renderer]
-    unsafe = true # 允許在 Markdown 中直接使用 HTML (為了埋 AffiliateOne 的廣告代碼)
+    unsafe = true  # 確保 YouTube 內嵌能跑  # 允許在 Markdown 中直接使用 HTML (為了埋 AffiliateOne 的廣告代碼)
   [markup.highlight]
     style = "monokai" # 程式碼高亮風格，極客最愛
