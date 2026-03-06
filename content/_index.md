@@ -13,8 +13,10 @@ showToc: false
 ### 01. 數位自主 (Digital Autonomy)
 不隨波逐流使用封閉系統。這裡討論 **Free Software**、**Linux 配置**與 **無線電通訊**、**Mount & Blade** 底層邏輯改造。
 
+>  *[最新文章]*：**[Meshtastic 與數位韌性](/posts/digital-resilience-meshtastic)**  
+>    
 > *[最新文章]*：**[無線電自由的重要](/posts/freeradio)**
-> *[最新文章]*：**[無線電自由的重要123](/posts/freeradio123)**
+>   
 > *Status: [System Initializing...]*
 
 ### 02. 物理秩序 (Physical Order)
