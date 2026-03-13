@@ -1,7 +1,7 @@
 # ==========================================
 # TrueCode.Boo | 出口簿 - 核心配置
 # ==========================================
-baseURL = 'https://truecodeboo.github.io/'
+baseURL = 'https://truecodeboo.boo/'
 languageCode = 'zh-tw'
 title = 'TrueCode.Boo | 出口簿'
 theme = 'PaperMod'
